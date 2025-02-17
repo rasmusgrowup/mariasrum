@@ -102,6 +102,23 @@
   }
 }
 
+.center {
+  flex-direction: column-reverse;
+  max-width: 100%;
+
+  .textBox {
+    padding-right: 0;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.videoBox {
+  margin-top: 1rem;
+}
+
 .button {
   display: block;
   margin-top: 2rem;

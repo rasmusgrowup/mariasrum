@@ -5,19 +5,32 @@ import Chevron from '../public/chevron_right.svg'
 import { SECTION_PLACEHOLDER } from '../lib/constants'
 
 function Section({ section }) {
+  console.log(section)
   return (
     <section className={scss.section} style={ section.baggrundsfarve && { backgroundColor: `${section.baggrundsfarve.css}` }}>
-      <div className={`${scss.imageWithText} ${ section.layout === true ? `${scss.left}`: `${scss.right}` }`}>
+      <div className={`${scss.imageWithText} ${ 
+            section.alignment === 'leftAligned' ? `${scss.left}` : 
+            section.alignment === 'rightAligned' ? `${scss.right}` : 
+            section.alignment === 'centerAligned' ? `${scss.center}` : `${scss.center}`
+      }`}>
         <div className={scss.imageBox}>
-          <Image
-            src={section.billede.url}
-            layout='responsive'
-            objectFit='cover'
-            objectPosition='center center'
-            height='400'
-            width='320'
-            quality='100'
-          />
+          {section.billede.mimeType === 'image/*' ?
+            <Image
+              src={section.billede.url}
+              layout='responsive'
+              objectFit='cover'
+              objectPosition='center center'
+              height='400'
+              width='320'
+              quality='100'
+            />
+            :
+            <div className={scss.videoBox}>
+              <video width="100%" height="100%" controls>
+                <source src={section.billede.url} type="video/mp4"/>
+              </video>
+            </div>
+          }
         </div>
         <div className={scss.textBox}>
           <h2>{section.titel}</h2>

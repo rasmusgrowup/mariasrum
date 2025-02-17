@@ -10,7 +10,7 @@ import Chevron from '../../public/chevron_right.svg'
 import SectionRenderer from "../../components/SectionRenderer";
 
 const graphcms = new GraphQLClient(
-  'https://api-eu-central-1.graphcms.com/v2/cl1aoja8b02gc01xm3r6e8ajy/master'
+  'https://eu-central-1.cdn.hygraph.com/content/cl1aoja8b02gc01xm3r6e8ajy/master'
 )
 
 export async function getServerSideProps() {
