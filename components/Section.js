@@ -14,7 +14,7 @@ function Section({ section }) {
             section.alignment === 'centerAligned' ? `${scss.center}` : `${scss.center}`
       }`}>
         <div className={scss.imageBox}>
-          {section.billede.mimeType === 'image/*' ?
+          {section.billede.mimeType.startsWith('image/') ?
             <Image
               src={section.billede.url}
               layout='responsive'
