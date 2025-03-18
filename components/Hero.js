@@ -14,7 +14,7 @@ function Hero({title, smallTitle, src, buttonText, href}) {
         <div className={scss.content}>
           <h1 className={scss.title}>{title}</h1>
           <h2 className={scss.smallTitle}>{smallTitle}</h2>
-          <div><Link href={href}><a className={scss.button}>{buttonText}</a></Link></div>
+          {href && <div><Link href={href}><a className={scss.button}>{buttonText}</a></Link></div>}
         </div>
       </section>
     </>
