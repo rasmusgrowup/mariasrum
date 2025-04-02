@@ -27,7 +27,7 @@ export default function Newsletter() {
         <div className={scss.inner}>
           <h2>{data.footer.overskriftTilNyhedsbrev}</h2>
           <div dangerouslySetInnerHTML={{ __html: `${data.footer.tekstTilNyhedsbrev.html}` }}></div>
-          <Link href='https://gmail.us14.list-manage.com/subscribe?u=afa7bafb8da9deb3bd242c3f0&id=8b33abd27d'><a className={scss.signUpButton} target='_blank'>Tilmeld dig her</a></Link>
+          <Link href='/tilmeld-nyhedsbrev'><a className={scss.signUpButton}>Tilmeld dig her</a></Link>
         </div>
       </section>
     </>

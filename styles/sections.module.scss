@@ -104,10 +104,16 @@
 
 .center {
   flex-direction: column-reverse;
-  max-width: 100%;
+  max-width: $m;
+  padding: 3rem 1rem;
+
+  .imageBox {
+    max-width: 100%;
+  }
 
   .textBox {
     padding-right: 0;
+    max-width: 100%;
 
     h2 {
       margin-bottom: 2rem;

@@ -47,7 +47,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 };
 
 export default function Mailchimp() {
-  const url = 'https://gmail.us14.list-manage.com/subscribe?u=afa7bafb8da9deb3bd242c3f0&id=8b33abd27d'
+  const url = '/tilmeld-nyhedsbrev'
 
   return (
     <>
