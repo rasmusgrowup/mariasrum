@@ -70,14 +70,19 @@ export async function getStaticProps({ params }) {
               html
             }
             titel
+            backgroundColor {
+                hex
+              }
           }
           ... on Tekst {
             id
             overskrift
-            baggrundsfarve
             tekst {
               html
             }
+            backgroundColor {
+                hex
+              }
           }
           ... on PrisBeholder {
             id

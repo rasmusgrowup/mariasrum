@@ -60,29 +60,28 @@ export default function MailchimpForm() {
                     className={styles.form}
                 >
                     <div id="mc_embed_signup_scroll">
-                        <h2 className="text-xl font-semibold text-center">Tilmeld dig mit nyhedsbrev og modtag viden om
-                            krop, følelser og nervesystemet - fra et kropsterapeutisk perspektiv.</h2>
+                        <h2 className="text-xl font-semibold text-center">Tilmeld dig mit nyhedsbrev og få mine bedste tips til at balancere dit nervesystem.</h2>
 
                         <div>
-                            <label className="block text-sm font-medium">Email Adresse</label>
-                            <input
-                                type="email"
-                                name="EMAIL"
-                                required
-                                id="mce-EMAIL"
-                                placeholder="Din email-adresse"
-                                defaultValue=""
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-medium">Fornavn</label>
+                            <label className="d-none block text-sm font-medium" style={{ display: 'none' }}>Navn</label>
                             <input
                                 type="text"
                                 name="FNAME"
                                 id="mce-FNAME"
                                 className="w-full p-2 border border-gray-300 rounded-md"
-                                placeholder="Dit fornavn"
+                                placeholder="Navn"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="d-none block text-sm font-medium" style={{ display: 'none' }}>Email</label>
+                            <input
+                                type="email"
+                                name="EMAIL"
+                                required
+                                id="mce-EMAIL"
+                                placeholder="Email"
+                                defaultValue=""
                             />
                         </div>
 
@@ -90,7 +89,7 @@ export default function MailchimpForm() {
                             type="submit"
                             className={styles.signUpButton}
                             id="mc-embedded-subscribe"
-                            value={"Tilmeld dig her"}
+                            value={"Tilmeld"}
                             onClick={handleSubmit}
                         />
                     </div>

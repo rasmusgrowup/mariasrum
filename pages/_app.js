@@ -4,14 +4,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { Analytics } from '@vercel/analytics/react';
 
 import Layout from '../components/Layout'
-import { useEffect, useContext } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 import { MenuProvider } from "../lib/menuContext"
-import { MenuContext } from "../lib/menuContext"
 import TagManager from 'react-gtm-module';
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter()
 
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-PGRRNDC' });

@@ -73,13 +73,18 @@ export async function getStaticProps() {
                 url
                 width
               }
+              backgroundColor {
+                hex
+              }
             }
             ... on Tekst {
               id
               overskrift
-              baggrundsfarve
               tekst {
                 html
+              }
+              backgroundColor {
+                hex
               }
             }
             ... on PrisBeholder {

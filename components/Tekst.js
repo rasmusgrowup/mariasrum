@@ -2,12 +2,12 @@ import scss from '../styles/tekst.module.scss'
 
 function Tekst({ section }) {
   const bgStyling = {
-    backgroundColor: `${ section.bg ? `${section.bg}` : '' }`
+    backgroundColor: `${ section.backgroundColor ? `${section.backgroundColor.hex}` : '' }`
   }
 
   const innerStyling = {
-    paddingBottom: `${ section.bg ? `` : '3rem' }`,
-    paddingTop: `${ section.bg ? `` : '3rem' }`
+    paddingBottom: `${ section.backgroundColor ? `` : '3rem' }`,
+    paddingTop: `${ section.backgroundColor ? `` : '3rem' }`
   }
 
   return (

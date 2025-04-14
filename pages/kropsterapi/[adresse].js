@@ -66,21 +66,23 @@ export async function getStaticProps({ params }) {
             alignment
             sektionLink
             sektionLinkTekst
-            baggrundsfarve {
-              css
-            }
             tekst {
               html
             }
             titel
+            backgroundColor {
+                hex
+              }
           }
           ... on Tekst {
             id
-            baggrundsfarve
             overskrift
             tekst {
               html
             }
+            backgroundColor {
+                hex
+              }
           }
           ... on PrisBeholder {
             id

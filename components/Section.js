@@ -7,7 +7,7 @@ import { SECTION_PLACEHOLDER } from '../lib/constants'
 function Section({ section }) {
   console.log(section)
   return (
-    <section className={scss.section} style={ section.baggrundsfarve && { backgroundColor: `${section.baggrundsfarve.css}` }}>
+    <section className={scss.section} style={ section.backgroundColor && { backgroundColor: `${section.backgroundColor.hex}` }}>
       <div className={`${scss.imageWithText} ${ 
             section.alignment === 'leftAligned' ? `${scss.left}` : 
             section.alignment === 'rightAligned' ? `${scss.right}` : 
