@@ -1,42 +1,37 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react";
-import scss from "../styles/layout.module.scss";
 import Image from "next/image";
 import Portrait from "../public/portrait.jpg";
+import scss from "../styles/layout.module.scss";
 import MailchimpForm from "../components/MailchimpForm";
+import { useNewsletterModal } from "./NewsletterModalContext";
 
 export default function NewsletterPopup() {
-    const [closed, setClosed] = useState(false);
+  const { isOpen, closeNewsletter } = useNewsletterModal();
 
-    // Read cookie when component mounts
-    useEffect(() => {
-        const cookies = document.cookie.split(';').reduce((acc, cookie) => {
-            const [key, value] = cookie.split('=').map(c => c.trim());
-            acc[key] = value;
-            return acc;
-        }, {});
-
-        if (cookies.modalClosed === 'true') {
-            setClosed(true);
-        }
-    }, []);
-
-    const closeModal = () => {
-        setClosed(true);
-        document.cookie = "modalClosed=true; path=/; max-age=" + 60 * 60 * 24 * 30;
-    }
-
-    return (
-        <div className={scss.newsletterPopup} style={{ display: closed ? "none" : "" }}>
-            <Image src={Portrait} alt="Portrait" width={500} height={700} objectFit="cover" />
-            <div className={scss.mailchimFormWrapper}>
-                <MailchimpForm />
-                <div className={scss.closeBtn} onClick={closeModal}>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+  return (
+    <div
+      className={scss.newsletterPopup}
+      style={{ display: isOpen ? "" : "none" }}
+    >
+      <div className={scss.newsletterImage}>
+        <Image
+          src={Portrait}
+          alt="Portrait"
+          width={500}
+          height={600}
+          objectFit="cover"
+          objectPosition={"top center"}
+          priority={true}
+        />
+      </div>
+      <div className={scss.mailchimFormWrapper}>
+        <MailchimpForm />
+        <div className={scss.closeBtn} onClick={closeNewsletter}>
+          <span></span>
+          <span></span>
         </div>
-    );
+      </div>
+    </div>
+  );
 }

@@ -26,14 +26,34 @@
 .newsletterPopup {
   background-color: var(--sand);
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.25);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
 
+  @media (max-width: $m) {
+    display: block;
+    width: calc(100% - 4rem);
+
+    .newsletterImage {
+      display: none;
+    }
+  }
+
+  .newsletterImage {
+    display: flex;
+
+    @media (max-width: $m) {
+      display: none;
+    }
+  }
+
   .mailchimFormWrapper {
+    align-items: center;
+    display: flex;
     padding: 2rem;
     position: relative;
 
@@ -47,7 +67,7 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      width: 2.4rem;
+      width: 1.6rem;
 
       span {
         background-color: var(--darker);

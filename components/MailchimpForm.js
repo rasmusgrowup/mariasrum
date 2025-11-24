@@ -59,11 +59,10 @@ export default function MailchimpForm() {
                     noValidate
                     className={styles.form}
                 >
-                    <div id="mc_embed_signup_scroll">
-                        <h2 className="text-xl font-semibold text-center">Tilmeld dig mit nyhedsbrev og få mine bedste tips til at balancere dit nervesystem.</h2>
-
+                    <div className={styles.signupInner} id="mc_embed_signup_scroll">
+                        <h2>Tilmeld dig mit nyhedsbrev og få mine bedste tips til at balancere dit nervesystem.</h2>
                         <div>
-                            <label className="d-none block text-sm font-medium" style={{ display: 'none' }}>Navn</label>
+                            <label style={{ display: 'none' }}>Navn</label>
                             <input
                                 type="text"
                                 name="FNAME"
@@ -74,7 +73,7 @@ export default function MailchimpForm() {
                         </div>
 
                         <div>
-                            <label className="d-none block text-sm font-medium" style={{ display: 'none' }}>Email</label>
+                            <label style={{ display: 'none' }}>Email</label>
                             <input
                                 type="email"
                                 name="EMAIL"
@@ -95,7 +94,7 @@ export default function MailchimpForm() {
                     </div>
                 </form>
             ) : (
-                <h2 className="text-center text-green-600">Af hjertet tak fordi du har tilmeldt dig mit nyhedsbrev.</h2>
+                <h2>Tak for din tilmelding.</h2>
             )}
         </div>
     );
