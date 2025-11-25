@@ -81,3 +81,18 @@
 .sektion {
   display: none;
 }
+
+.sectionBox {
+  padding: 6rem;
+
+  .box {
+    background-color: var(--clay);
+    max-width: calc($m - 2rem);
+    margin: 1rem auto;
+    padding: 2rem 3rem;
+
+    .boxText a {
+      text-decoration: underline;
+    }
+  }
+}

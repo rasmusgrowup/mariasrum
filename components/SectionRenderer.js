@@ -3,6 +3,7 @@ import Section from "./Section";
 import Tekst from "./Tekst";
 import Citater from "./Citater";
 import Priser from "./Priser";
+import Box from "./Box";
 
 export default function SectionRenderer({ sections }) {
 
@@ -10,6 +11,8 @@ export default function SectionRenderer({ sections }) {
         <>
             { sections && sections.map((section, i) => {
                 switch (section.__typename) {
+                    case 'Box':
+                        return <Box key={section.id} section={section} i={i} />
                     case 'KortBeholder':
                         return <Categories key={section.id} section={section} i={i} />
                     case 'Sektion':

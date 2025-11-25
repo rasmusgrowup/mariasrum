@@ -30,6 +30,19 @@ export async function getStaticProps({ params }) {
         ctaTekst
         blokke {
           __typename
+          ... on Box {
+            backgroundColor {
+              hex
+            }
+            boxColor {
+              hex
+            }
+            text {
+              html
+            }
+            paddingTop
+            paddingBottom
+          }
           ... on CitatBeholder {
             id
             overskrift
