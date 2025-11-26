@@ -85,6 +85,10 @@
 .sectionBox {
   padding: 6rem;
 
+  @media (max-width: $l) {
+    padding: 1rem;
+  }
+
   .box {
     background-color: var(--clay);
     max-width: calc($m - 2rem);
