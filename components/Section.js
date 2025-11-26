@@ -26,7 +26,7 @@ function Section({ section }) {
             />
             :
             <div className={scss.videoBox}>
-              <video width="100%" height="100%" controls preload="metadata">
+              <video width="100%" height="100%" controls preload="metadata" poster={section.billede.thumbnail?.url}>
                 <source src={section.billede.url} type="video/mp4"/>
               </video>
             </div>

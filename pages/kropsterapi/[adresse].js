@@ -61,6 +61,9 @@ export async function getStaticProps({ params }) {
               height
               url
               width
+              thumbnail {
+                url
+              }
             }
             layout
             alignment
