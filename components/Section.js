@@ -2,17 +2,22 @@ import Image from "next/image"
 import Link from "next/link"
 import scss from '../styles/sections.module.scss'
 import Chevron from '../public/chevron_right.svg'
+import clsx from 'clsx';
 import { SECTION_PLACEHOLDER } from '../lib/constants'
 
 function Section({ section }) {
-  console.log(section)
+    console.log(section)
   return (
     <section className={scss.section} style={ section.backgroundColor && { backgroundColor: `${section.backgroundColor.hex}` }}>
-      <div className={`${scss.imageWithText} ${ 
-            section.alignment === 'leftAligned' ? `${scss.left}` : 
-            section.alignment === 'rightAligned' ? `${scss.right}` : 
-            section.alignment === 'centerAligned' ? `${scss.center}` : `${scss.center}`
-      }`}>
+      <div className={clsx(
+          scss.imageWithText,
+          {
+              [scss.left]: section.alignment === 'leftAligned',
+              [scss.right]: section.alignment === 'rightAligned',
+              [scss.center]: section.alignment === 'centerAligned',
+              [scss.showImageFirst]: section.mobileLayout === true,
+          }
+      )}>
         <div className={scss.imageBox}>
           {section.billede.mimeType.startsWith('image/') ?
             <Image

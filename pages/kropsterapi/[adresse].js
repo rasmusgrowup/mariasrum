@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
                 url
               }
             }
-            layout
+            mobileLayout
             alignment
             sektionLink
             sektionLinkTekst

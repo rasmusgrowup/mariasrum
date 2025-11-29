@@ -59,7 +59,7 @@ export async function getStaticProps() {
             }
             ... on Sektion {
               id
-              layout
+              mobileLayout
               alignment
               sektionLink
               sektionLinkTekst

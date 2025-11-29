@@ -50,9 +50,13 @@
   max-width: $m;
 
   @media (max-width: $m) {
-    display: block;
+    flex-direction: column-reverse;
     margin: 2rem auto;
     padding: 1rem;
+
+    &.showImageFirst {
+      flex-direction: column;
+    }
   }
 
   .textBox,
@@ -60,6 +64,7 @@
     display: block;
     flex: 1;
     max-width: 50%;
+    width: 100%;
 
     @media (max-width: $m) {
       max-width: 100%;
